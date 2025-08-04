@@ -3,15 +3,23 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
-
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  {
+    let sum = 0;
+    let i = 0;
+    while (i < numbers.length) {
+      const number = numbers[i];
+      sum += number;
+      i += 1;
+    }
+    return sum;
+  }
 }
 
 /**
@@ -19,7 +27,8 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let mean = getSum(numbers) / getLength(numbers);
+  return mean;
 }
 
 /**
@@ -27,7 +36,13 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let min = Infinity;
+  for (const n of numbers) {
+    if (n < min) {
+      min = n;
+    }
+  }
+  return min;
 }
 
 /**
@@ -35,7 +50,13 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let max = -Infinity;
+  for (const n of numbers) {
+    if (n > max) {
+      max = n;
+    }
+  }
+  return max;
 }
 
 /**
@@ -43,7 +64,7 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
@@ -51,7 +72,13 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  const evens = [];
+  for (const n of numbers) {
+    if (n % 2 === 0) {
+      evens.push(n);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -59,7 +86,13 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  const odds = [];
+  for (const n of numbers) {
+    if (n % 2 === 1) {
+      odds.push(n);
+    }
+  }
+  return odds;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
